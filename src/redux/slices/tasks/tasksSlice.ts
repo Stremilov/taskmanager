@@ -3,11 +3,13 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { IInitialState, IProject, ITask } from "./types";
 
 const initialState: IInitialState = {
+  teams: [],
+  projects: [],
   tasks: [],
 };
 
-export const tasksSlice = createSlice({
-  name: "tasks",
+export const projectsSlice = createSlice({
+  name: "projects",
   initialState,
   reducers: {
     addTask(state, action: PayloadAction<ITask>) {
