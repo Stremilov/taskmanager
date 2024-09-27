@@ -1,5 +1,8 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  --fontPrimary: rgba(248, 248, 248, 1);
+  --fontSecondary: rgba(126, 131, 140, 1);
 }
 
 body {

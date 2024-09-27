@@ -28,7 +28,7 @@
       "@redux/*": ["./src/redux/*"],
       "@pages/*": ["./src/pages/*"],
       "@constants/*": ["./src/constants/*"],
-      "@layouts/*": ["./src/layouts/*"],
+      "@shared/*": ["./src/shared/*"],
       "@types/*": ["./src/types/*"]
     }
   },

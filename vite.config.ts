@@ -12,7 +12,7 @@ export default defineConfig({
       "@redux": path.resolve(__dirname, "./src/redux"),
       "@pages": path.resolve(__dirname, "./src/pages"),
       "@constants": path.resolve(__dirname, "./src/constants"),
-      "@layouts": path.resolve(__dirname, "./src/layouts"),
+      "@shared": path.resolve(__dirname, "./src/shared"),
       "@types": path.resolve(__dirname, "./src/types"),
     },
   },

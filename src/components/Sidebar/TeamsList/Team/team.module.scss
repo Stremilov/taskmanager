@@ -1,0 +1,27 @@
+@use "@shared/mixins";
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.hideProjectBtn {
+  @include mixins.symbolBtn(1em, var(--fontPrimary));
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.createTeamBtn {
+  @include mixins.symbolBtn(1.2em, var(--fontPrimary));
+
+  &:hover {
+    color: green;
+  }
+}

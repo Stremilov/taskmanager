@@ -1,0 +1,9 @@
+@mixin symbolBtn($fontSize, $clr) {
+  background-color: transparent;
+  color: $clr;
+  font-size: $fontSize;
+
+  outline: none;
+  border: none;
+  cursor: pointer;
+}

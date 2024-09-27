@@ -1,0 +1,11 @@
+$arrowDown: url(@/assets/arrowDown.svg);
+
+.main {
+  padding: 0;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  list-style-type: none;
+}

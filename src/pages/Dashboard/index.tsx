@@ -1,8 +1,10 @@
 import Sidebar from "@components/Sidebar";
 
+import cls from "./dashboard.module.scss";
+
 const DashBoard = () => {
   return (
-    <div>
+    <div className={cls.main}>
       <Sidebar />
     </div>
   );
