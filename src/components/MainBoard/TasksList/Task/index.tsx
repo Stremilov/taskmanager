@@ -16,10 +16,19 @@ interface Props {
 const Task: FC<Props> = ({ id, heading, description, authorId }) => {
   const date = new Date().toLocaleDateString("ru-RU");
 
+  const taskLink = `http://github.com/${"someUri"}/task/${id}`;
+
+  const copyTaskLink = () => {
+    navigator.clipboard.writeText(taskLink);
+    alert("Ссылка на задачу скопирована в буффер обмена");
+  };
+
   return (
     <div className={cls.main}>
       <div className={cls.info}>
-        <span className={cls.taskId}>{"#" + id}</span>
+        <button onClick={copyTaskLink} className={cls.taskId}>
+          {"#" + id}
+        </button>
         <span className={cls.time}>
           <img src={ClockIcon} alt="" />
           {date}
