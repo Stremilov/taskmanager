@@ -1,5 +1,9 @@
 @use "@shared/mixins";
 
+.main {
+  border-left: 1px solid var(--fontSecondary);
+}
+
 .heading {
   display: flex;
   align-items: center;
@@ -24,4 +28,10 @@
   &:hover {
     color: green;
   }
+}
+
+.teamName {
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--default-50);
 }

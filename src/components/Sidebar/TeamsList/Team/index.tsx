@@ -2,7 +2,7 @@ import { FC, useState } from "react";
 
 import ProjectsList from "@components/Sidebar/TeamsList/ProjectsList";
 
-import arrowDownPic from "@assets/arrowDown.svg";
+import arrowDownPic from "@assets/pics/arrowDown.svg";
 
 import cls from "./team.module.scss";
 
@@ -21,7 +21,11 @@ const Team: FC<Props> = ({ teamName }) => {
           className={cls.hideProjectBtn}
           onClick={() => setShowProjects((prev) => !prev)}
         >
-          <img src={arrowDownPic} />
+          <img
+            src={arrowDownPic}
+            className={cls.arrow}
+            style={{ transform: showProjects ? "" : "rotate(270deg)" }}
+          />
           <span className={cls.teamName}>{teamName}</span>
         </button>
         <button className={cls.createTeamBtn}>+</button>

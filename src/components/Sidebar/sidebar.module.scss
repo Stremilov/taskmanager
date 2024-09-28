@@ -1,9 +1,34 @@
 .main {
-  margin: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin: 20px 30px 10px 16px;
   width: 20%;
   height: 90%;
-  background-color: rgba(29, 34, 44, 1);
+  background-color: rgba(33, 35, 40, 1);
   color: var(--fontPrimary);
   border-radius: 32px;
   padding: 16px;
+}
+
+.teamsHeader {
+  margin-top: 108px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  color: var(--fontSecondary);
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerLine {
+  width: 90%;
 }

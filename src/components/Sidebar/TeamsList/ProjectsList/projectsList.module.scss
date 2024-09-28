@@ -1,12 +1,21 @@
 .list {
-  list-style-type: "-> ";
+  padding-left: 10px;
+  list-style-type: none;
+  border-left: 1px solid var(--blue-0);
+  margin-left: 11px;
 }
 
 .project {
+  font-size: 16px;
+  font-weight: 500;
   color: var(--fontSecondary);
+  padding: 12px 14px;
+
+  border-radius: 8px;
 
   &:hover {
     cursor: pointer;
-    color: white;
+    background-color: var(--blue-500);
+    color: var(--blue-0);
   }
 }
