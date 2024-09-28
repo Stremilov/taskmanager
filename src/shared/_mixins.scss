@@ -7,3 +7,10 @@
   border: none;
   cursor: pointer;
 }
+
+@mixin dropButtonStyle() {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}

@@ -1,26 +1,22 @@
 import { FC, useState } from "react";
 
-import ProjectsList from "@components/Sidebar/TeamsList/ProjectsList";
+import ProjectsList from "@/components/Sidebar/TeamsList/ProjectsList";
 
 import arrowDownPic from "@assets/pics/arrowDown.svg";
 
 import cls from "./team.module.scss";
 import { useAppDispatch } from "@/redux/utils/hooks";
 import { chooseTeam } from "@/redux/slices/teams/teamsSlice";
+import { ITeam } from "@/redux/types/types";
 
-type Props = {
-  teamId: string;
-  teamName: string;
-};
-
-const Team: FC<Props> = ({ teamId, teamName }) => {
+const Team: FC<ITeam> = ({ id, name, projects }) => {
   const dispatch = useAppDispatch();
 
   const [showProjects, setShowProjects] = useState<boolean>(false);
 
   const clickHandler = () => {
     setShowProjects((prev) => !prev);
-    dispatch(chooseTeam(teamId));
+    dispatch(chooseTeam(id));
   };
 
   return (
@@ -36,11 +32,11 @@ const Team: FC<Props> = ({ teamId, teamName }) => {
             className={cls.arrow}
             style={{ transform: showProjects ? "" : "rotate(270deg)" }}
           />
-          <span className={cls.teamName}>{teamName}</span>
+          <span className={cls.teamName}>{name}</span>
         </button>
         <button className={cls.createTeamBtn}>+</button>
       </p>
-      {showProjects && <ProjectsList teamName={teamName} />}
+      {showProjects && <ProjectsList projects={projects} />}
     </>
   );
 };

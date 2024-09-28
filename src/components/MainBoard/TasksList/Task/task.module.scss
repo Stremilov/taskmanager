@@ -9,6 +9,21 @@
   background-color: var(--default-50);
 }
 
+.info {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 10px;
+  color: var(--default-700);
+}
+
 .heading {
   font-weight: 700;
   font-size: 20px;

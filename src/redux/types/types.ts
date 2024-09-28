@@ -6,7 +6,7 @@ export interface ITask {
 }
 
 export interface IAuthor {
-  id: number | string;
+  id: string;
   name: string;
   password: string;
   surname: string;
@@ -15,7 +15,7 @@ export interface IAuthor {
   phone: string;
   teams: [
     {
-      id: number | string;
+      id: string;
       name: string;
       users: string[];
       projects: string[];
@@ -24,7 +24,7 @@ export interface IAuthor {
 }
 
 export interface IAssignee {
-  id: number | string;
+  id: string;
   name: string;
   password: string;
   surname: string;
@@ -33,7 +33,7 @@ export interface IAssignee {
   phone: string;
   teams: [
     {
-      id: number | string;
+      id: string;
       name: string;
       users: string[];
       projects: string[];
@@ -42,11 +42,11 @@ export interface IAssignee {
 }
 
 export interface IProject {
-  id: number | string;
+  id: string;
   name: string;
   description: string;
   team: {
-    id: number | string;
+    id: string;
     name?: string;
     users?: string[];
   };
@@ -54,7 +54,7 @@ export interface IProject {
 }
 
 export interface ITeam {
-  id: number | string;
+  id: string;
   name: string;
   projects: IProject[];
   deadline?: string;

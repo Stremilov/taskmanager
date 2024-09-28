@@ -18,11 +18,11 @@ const Sidebar = () => {
       </p>
 
       <div className={cls.footer}>
-        <hr className={cls.footerLine} color="rgba(41, 48, 61, 1)" />
+        <hr className={cls.footerLine} color="#29303d" />
         <img
           src={Logo}
-          width={126}
-          height={126}
+          width={106}
+          height={42}
           alt="Logo of tech department SPbSUT"
         />
       </div>

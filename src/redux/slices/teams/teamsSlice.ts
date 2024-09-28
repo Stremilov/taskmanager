@@ -11,7 +11,7 @@ const initialState: IInitialState = {
       name: "TechDep",
       projects: [
         {
-          id: "pr1",
+          id: "pr1_1",
           name: "Бэкенд",
           description: "Ваше описание проекта",
           team: {
@@ -33,7 +33,7 @@ const initialState: IInitialState = {
           ],
         },
         {
-          id: "pr2",
+          id: "pr1_2",
           name: "Дизайн",
           description: "Ваше описание проекта",
           team: {
@@ -57,15 +57,15 @@ const initialState: IInitialState = {
       ],
     },
     {
-      id: "2",
+      id: "t2",
       name: "Bedolagi",
       projects: [
         {
-          id: "pr1",
+          id: "pr2_1",
           name: "Бэкенд",
           description: "Ваше описание проекта",
           team: {
-            id: "t1",
+            id: "t2",
           },
           tasks: [
             {
@@ -83,11 +83,11 @@ const initialState: IInitialState = {
           ],
         },
         {
-          id: "pr2",
+          id: "pr2_2",
           name: "Фронтенд",
           description: "Ваше описание проекта",
           team: {
-            id: "t1",
+            id: "t2",
           },
           tasks: [
             {
@@ -113,8 +113,8 @@ const initialState: IInitialState = {
       ],
     },
   ],
-  chosenTeamId: "1",
-  chosenProjectId: "1",
+  chosenTeamId: "t1",
+  chosenProjectId: "pr1_1",
 };
 
 export const teamsSlice = createSlice({
@@ -130,6 +130,10 @@ export const teamsSlice = createSlice({
 
     chooseProject(state, action: PayloadAction<string>) {
       state.chosenProjectId = action.payload;
+    },
+
+    renameProject(state, action: PayloadAction<{ id: string; name: string }>) {
+      console.log("AA");
     },
     // removeTeam(state, action: PayloadAction<string>) {
     //   // пупупу

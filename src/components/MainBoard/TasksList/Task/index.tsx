@@ -1,7 +1,10 @@
 import { FC } from "react";
 
-import cls from "./task.module.scss";
 import Avatar from "@/components/User/Avatar";
+
+import ClockIcon from "@assets/pics/clock.svg";
+
+import cls from "./task.module.scss";
 
 interface Props {
   id: string;
@@ -11,9 +14,17 @@ interface Props {
 }
 
 const Task: FC<Props> = ({ id, heading, description, authorId }) => {
+  const date = new Date().toLocaleDateString("ru-RU");
+
   return (
     <div className={cls.main}>
-      <p className={cls.taskId}>{"#" + id}</p>
+      <div className={cls.info}>
+        <span className={cls.taskId}>{"#" + id}</span>
+        <span className={cls.time}>
+          <img src={ClockIcon} alt="" />
+          {date}
+        </span>
+      </div>
       <h1 className={cls.heading}>{heading}</h1>
       <p className={cls.description}>{description}</p>
       <div className={cls.author}>

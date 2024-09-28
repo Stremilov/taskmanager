@@ -1,30 +1,20 @@
 import { FC } from "react";
 
 import cls from "./projectsList.module.scss";
+import { IProject } from "@/redux/types/types";
+import Project from "./Project";
 
 interface ProjectsListProps {
-  teamName: string;
+  projects: IProject[];
 }
 
-const ProjectsList: FC<ProjectsListProps> = ({ teamName }) => {
-  console.log("Ща покажу проекты команды", teamName);
-  const availableProject = [
-    {
-      id: 333,
-      name: "Личный кабинет СПбГУТ",
-    },
-    {
-      id: 555,
-      name: "Телеграм бот для Проекта ИСТ",
-    },
-  ];
-
+const ProjectsList: FC<ProjectsListProps> = ({ projects }) => {
   return (
     <ul className={cls.list}>
-      {availableProject.map((project) => {
+      {projects.map((project) => {
         return (
-          <li className={cls.project} key={project.id}>
-            {project.name}
+          <li>
+            <Project {...project} />
           </li>
         );
       })}
