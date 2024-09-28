@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: space-between;
   margin: 0;
+  margin-bottom: 8px;
 }
 
 .hideProjectBtn {
@@ -31,8 +32,6 @@
 }
 
 .teamName {
-  margin-bottom: 8px;
-
   font-weight: 500;
   font-size: 20px;
   color: var(--default-50);

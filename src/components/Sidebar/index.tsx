@@ -4,6 +4,7 @@ import TeamsList from "@/components/Sidebar/TeamsList";
 import UsersIcon from "@assets/pics/users.svg";
 import Logo from "@assets/pics/logoTechDep.svg";
 import cls from "./sidebar.module.scss";
+import AddTeamBtn from "./AddTeamBtn";
 
 const Sidebar = () => {
   return (
@@ -15,6 +16,7 @@ const Sidebar = () => {
           Teams
         </div>
         <TeamsList />
+        <AddTeamBtn />
       </p>
 
       <div className={cls.footer}>

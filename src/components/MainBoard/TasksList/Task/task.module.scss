@@ -32,15 +32,6 @@
   color: var(--default-900);
 }
 
-.author {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 10px;
-  font-weight: 500;
-  color: var(--custom-grey);
-}
-
 .taskId {
   @include mixins.dropButtonStyle();
 
@@ -50,4 +41,28 @@
   color: var(--default-700);
 
   border-radius: 4px;
+}
+
+.bottom {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  &:hover {
+    svg path {
+      fill: var(--blue-500);
+    }
+  }
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--custom-grey);
 }

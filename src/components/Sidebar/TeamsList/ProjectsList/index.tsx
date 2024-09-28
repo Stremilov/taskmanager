@@ -13,7 +13,7 @@ const ProjectsList: FC<ProjectsListProps> = ({ projects }) => {
     <ul className={cls.list}>
       {projects.map((project) => {
         return (
-          <li>
+          <li key={project.id}>
             <Project {...project} />
           </li>
         );

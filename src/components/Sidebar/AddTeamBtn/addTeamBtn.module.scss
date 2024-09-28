@@ -1,0 +1,10 @@
+@use "@shared/mixins";
+
+.main {
+  margin-left: 10px;
+
+  @include mixins.dropButtonStyle();
+
+  font-size: 14px;
+  color: var(--default-400);
+}
