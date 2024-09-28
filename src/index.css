@@ -1,11 +1,11 @@
 @font-face {
-  font-family: "TTNorms";
-  src: url("/src/assets/fonts//TTNorms-Medium.otf") format("otf");
+  font-family: "TT_Norms";
+  src: url("/src/assets/fonts/TTNorms-Medium.woff2") format("woff2");
 }
 
 :root {
-  /* font-family: "TTNorms"; */
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: TT_Norms;
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
 
   --custom-gray: rgba(217, 217, 217, 1);
   --custom-dark-gray: rgba(210, 213, 219, 1);

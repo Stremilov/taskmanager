@@ -1,6 +1,8 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-import { IInitialState, ITeam } from "./types";
+import { IInitialState } from "./types";
+
+import { ITeam } from "@/redux/types/types";
 
 const initialState: IInitialState = {
   teams: [
