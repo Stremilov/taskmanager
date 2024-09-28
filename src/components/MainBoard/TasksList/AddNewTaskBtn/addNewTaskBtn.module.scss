@@ -1,0 +1,15 @@
+@use "@shared/mixins";
+
+.main {
+  @include mixins.symbolBtn(1.5em, black);
+  display: flex;
+  width: 100%;
+
+  padding: 10px 12px;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  background-color: var(--custom-dark-gray);
+}

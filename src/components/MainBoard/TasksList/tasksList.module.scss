@@ -1,0 +1,22 @@
+.main {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+
+  padding: 8px;
+  min-height: 200px;
+  max-height: 90%;
+  min-width: 22%;
+  max-width: 24%;
+  border-radius: 18px;
+
+  background-color: var(--default-100);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

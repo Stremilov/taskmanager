@@ -1,0 +1,31 @@
+.main {
+  padding: 20px 24px;
+
+  border-radius: 12px;
+
+  background-color: var(--default-50);
+}
+
+.heading {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--default-900);
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--custom-grey);
+}
+
+.taskId {
+  padding: 4px 8px;
+  width: fit-content;
+  background-color: var(--custom-gray);
+  color: var(--default-700);
+
+  border-radius: 4px;
+}

@@ -1,4 +1,4 @@
-import Avatar from "./Avatar";
+import Avatar from "@components/User/Avatar";
 
 import cls from "./userInfo.module.scss";
 
