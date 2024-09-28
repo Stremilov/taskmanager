@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, Fragment } from "react";
 import { useAppSelector } from "@/redux/utils/hooks";
 import { selectChosenProjectsTasks } from "@/redux/slices/teams/selectors";
 import Heading from "./Heading";
@@ -23,7 +23,9 @@ const TasksList: FC<{ type: TasksListsTypes }> = ({ type }) => {
       <Heading text={listsNames[type]} />
       <div className={cls.body}>
         {tasks.map((task) => (
-          <Task {...task} />
+          <Fragment key={task.id}>
+            <Task {...task} />
+          </Fragment>
         ))}
       </div>
       <AddNewTaskBtn />

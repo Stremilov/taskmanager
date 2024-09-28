@@ -1,3 +1,4 @@
+import { Fragment } from "react/jsx-runtime";
 import Heading from "./Heading";
 import cls from "./mainBoard.module.scss";
 import TasksList, { TasksListsTypes } from "./TasksList";
@@ -15,7 +16,9 @@ const MainBoard = () => {
       <Heading />
       <div className={cls.main}>
         {tasksListsTypes.map((type) => (
-          <TasksList type={type} key={type} />
+          <Fragment key={type}>
+            <TasksList type={type} key={type} />
+          </Fragment>
         ))}
       </div>
     </div>
