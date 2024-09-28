@@ -5,15 +5,9 @@ import Avatar from "@/components/User/Avatar";
 import ClockIcon from "@assets/pics/clock.svg";
 
 import cls from "./task.module.scss";
+import { ITask } from "@/redux/types/types";
 
-interface Props {
-  id: string;
-  heading: string;
-  description: string;
-  authorId: string;
-}
-
-const Task: FC<Props> = ({ id, heading, description, authorId }) => {
+const Task: FC<ITask> = ({ id, name, description, authorId }) => {
   const date = new Date().toLocaleDateString("ru-RU");
 
   const taskLink = `http://github.com/${"someUri"}/task/${id}`;
@@ -34,7 +28,7 @@ const Task: FC<Props> = ({ id, heading, description, authorId }) => {
           {date}
         </span>
       </div>
-      <h1 className={cls.heading}>{heading}</h1>
+      <h1 className={cls.heading}>{name}</h1>
       <p className={cls.description}>{description}</p>
       <div className={cls.author}>
         <Avatar size={24} />

@@ -1,5 +1,13 @@
 import { RootState } from "@/redux/store";
 import { IProject, ITeam } from "@/redux/types/types";
+import { createSelector } from "@reduxjs/toolkit";
+
+const emptyTask = {
+  id: "-1Task",
+  name: "Задача без имени",
+  description: "Задача без описания",
+  projectId: "-1p",
+};
 
 const emptyProject = {
   id: "-1p",
@@ -9,6 +17,7 @@ const emptyProject = {
     id: "-1",
     name: "Команда без имени",
   },
+  tasks: [emptyTask],
 };
 
 const emptyTeam = {
@@ -54,4 +63,19 @@ export const selectChosenProject = (
   }
 
   return projectToReturn;
+};
+
+export const selectChosenProjectName = createSelector(
+  selectChosenProject,
+  (project) => project.name
+);
+
+export const selectChosenProjectTasksAmount = createSelector(
+  selectChosenProject,
+  (project) => project.tasks.length
+);
+
+export const selectChosenProjectsTasks = (state: RootState) => {
+  const project = selectChosenProject(state);
+  return project.tasks;
 };

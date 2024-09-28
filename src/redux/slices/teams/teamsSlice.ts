@@ -144,6 +144,7 @@ export const teamsSlice = createSlice({
   },
 });
 
-export const { addTeam, chooseTeam, chooseProject } = teamsSlice.actions;
+export const { addTeam, chooseTeam, chooseProject, renameProject } =
+  teamsSlice.actions;
 
 export default teamsSlice.reducer;

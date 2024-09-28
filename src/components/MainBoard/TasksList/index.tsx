@@ -1,4 +1,6 @@
 import { FC } from "react";
+import { useAppSelector } from "@/redux/utils/hooks";
+import { selectChosenProjectsTasks } from "@/redux/slices/teams/selectors";
 import Heading from "./Heading";
 import cls from "./tasksList.module.scss";
 import AddNewTaskBtn from "./AddNewTaskBtn";
@@ -13,34 +15,15 @@ const listsNames = {
   done: "Завершено",
 };
 
-const tasks = [
-  {
-    id: "1",
-    heading: "Задача 1",
-    description: "Описание задачи 1",
-    authorId: "1",
-  },
-  {
-    id: "2",
-    heading: "Задача 2",
-    description: "Описание задачи 2",
-    authorId: "2",
-  },
-];
-
 const TasksList: FC<{ type: TasksListsTypes }> = ({ type }) => {
+  const tasks = useAppSelector(selectChosenProjectsTasks);
+
   return (
     <div className={cls.main}>
       <Heading text={listsNames[type]} />
       <div className={cls.body}>
         {tasks.map((task) => (
-          <Task
-            id={task.id}
-            key={task.id}
-            heading={task.heading}
-            description={task.description}
-            authorId={task.authorId}
-          />
+          <Task {...task} />
         ))}
       </div>
       <AddNewTaskBtn />
