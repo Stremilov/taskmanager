@@ -22,7 +22,8 @@
   --fontSecondary: rgba(126, 131, 140, 1);
 }
 
-body {
+body,
+* {
   margin: 0;
 }
 

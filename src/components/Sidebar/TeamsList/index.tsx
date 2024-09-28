@@ -1,24 +1,18 @@
 import cls from "./teamsList.module.scss";
 import Team from "./Team";
+import { useAppSelector } from "@/redux/utils/hooks";
+import { selectTeams } from "@/redux/slices/teams/selectors";
 
 const TeamsList = () => {
-  const availableTeams = [
-    {
-      id: 123,
-      name: "Team 1",
-    },
-    {
-      id: 321,
-      name: "Team 2",
-    },
-  ];
+  const availableTeams = useAppSelector(selectTeams);
+  console.log(availableTeams);
 
   return (
     <ul className={cls.main}>
       {availableTeams.map((team) => {
         return (
           <li key={team.id}>
-            <Team teamName={team.name} />
+            <Team teamId={team.id} teamName={team.name} />
           </li>
         );
       })}

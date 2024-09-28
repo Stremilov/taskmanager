@@ -6,7 +6,7 @@ const initialState: IInitialState = {
   tasks: [],
 };
 
-export const tasksSlice = createSlice({
+export const teamsSlice = createSlice({
   name: "tasks",
   initialState,
   reducers: {
@@ -22,6 +22,6 @@ export const tasksSlice = createSlice({
   },
 });
 
-export const { addTask, removeTask } = cartSlice.actions;
+export const { addTask, removeTask } = teamsSlice.actions;
 
-export default cartSlice.reducer;
+export default teamsSlice.reducer;
