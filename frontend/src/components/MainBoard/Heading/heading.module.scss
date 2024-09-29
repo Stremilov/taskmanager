@@ -1,0 +1,58 @@
+.heading {
+  font-weight: 700;
+  font-size: 44px;
+
+  color: var(--default-850);
+}
+
+.tasksAmount {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 6px;
+}
+
+.subHeading {
+  margin: 8px 0 20px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 12px;
+
+  color: var(--default-400);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.settings {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+
+.setting {
+  display: flex;
+  gap: 6px;
+  width: fit-content;
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+
+  color: var(--default-600);
+
+  border-radius: 4px;
+}
+
+.activeSetting {
+  background-color: var(--default-100);
+}
+
+.settingLine {
+  width: 100%;
+
+  margin: 8px 0 20px 0;
+}

@@ -1,0 +1,14 @@
+@use "@shared/mixins";
+
+.main {
+  margin: 24px 0 0 10px;
+
+  @include mixins.dropButtonStyle();
+
+  font-size: 14px;
+  color: var(--default-400);
+
+  &:hover {
+    color: var(--default-100);
+  }
+}

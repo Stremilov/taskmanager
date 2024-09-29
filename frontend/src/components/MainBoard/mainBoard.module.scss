@@ -1,0 +1,17 @@
+.layout {
+  margin: 200px 0 100px 0;
+  margin-right: 100px;
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  height: 80%;
+  width: 100%;
+}

@@ -1,0 +1,13 @@
+.main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.userName {
+  color: var(--fontPrimary);
+}
+
+.email {
+  color: var(--fontSecondary);
+}

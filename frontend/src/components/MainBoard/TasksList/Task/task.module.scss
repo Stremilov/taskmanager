@@ -1,0 +1,90 @@
+@use "@shared/mixins";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 24px;
+
+  border-radius: 12px;
+
+  background-color: var(--default-50);
+}
+
+.heading {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+
+.difficulty {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dots {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.info {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 10px;
+  color: var(--default-700);
+}
+
+.title {
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--default-900);
+}
+
+.description {
+  font-size: 14px;
+  color: var(--custom-grey);
+}
+
+.taskId {
+  @include mixins.dropButtonStyle();
+
+  padding: 4px 8px;
+  width: fit-content;
+  background-color: var(--custom-gray);
+  color: var(--default-700);
+
+  border-radius: 4px;
+}
+
+.bottom {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  &:hover {
+    svg path {
+      fill: var(--blue-500);
+    }
+  }
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--custom-grey);
+}

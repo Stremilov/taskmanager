@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "TT_Norms";
+  src: url("/src/assets/fonts/TTNorms-Medium.woff2") format("woff2");
+}
+
+:root {
+  font-family: TT_Norms;
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+
+  --custom-gray: rgba(217, 217, 217, 1);
+  --custom-dark-gray: rgba(210, 213, 219, 1);
+  --custom-grey: rgba(114, 114, 114, 1);
+  --blue-0: rgba(170, 180, 199, 1);
+  --blue-200: rgba(114, 122, 137, 1);
+  --blue-500: rgba(44, 49, 59, 1);
+  --dark-blue-400: rgba(57, 63, 75, 1);
+  --default-50: rgba(244, 244, 245, 1);
+  --default-100: rgba(233, 234, 235, 1);
+  --default-400: rgba(169, 170, 174, 1);
+  --default-500: rgba(147, 149, 154, 1);
+  --default-600: rgba(118, 120, 124, 1);
+  --default-700: rgba(89, 91, 94, 1);
+  --default-850: rgba(46, 47, 48, 1);
+  --default-900: rgba(32, 32, 33, 1);
+  --fontPrimary: rgba(248, 248, 248, 1);
+  --fontSecondary: rgba(126, 131, 140, 1);
+}
+
+body,
+* {
+  margin: 0;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
