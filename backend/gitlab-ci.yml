@@ -1,0 +1,32 @@
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  IMAGE_NAME: it-one-task-tracker-backend
+  CONTAINER_NAME: it-one-task-tracker-backend
+
+before_script:
+  - echo "Setting up environment..."
+
+build:
+  stage: build
+  script:
+    - echo "Building the Docker image..."
+    - mvn clean package
+#    - docker-compose build
+
+test:
+  stage: test
+  script:
+    - echo "Running tests..."
+    - docker-compose up -d
+    - docker-compose exec my-java-app ./mvnw test
+    - docker-compose down
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying the application..."
+    - docker-compose up -d
