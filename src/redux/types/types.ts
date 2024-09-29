@@ -8,26 +8,7 @@ export interface ITask {
   difficulty?: number;
   branchInfo?: string;
   createdDate?: string; // "2024-09-27";
-  author?: IAuthor;
-  assignee?: IAssignee;
-}
-
-export interface IAuthor {
-  id: string;
-  name: string;
-  password: string;
-  surname: string;
-  username: string;
-  email: string;
-  phone: string;
-  teams: [
-    {
-      id: string;
-      name: string;
-      users: string[];
-      projects: string[];
-    }
-  ];
+  assignees?: IAssignee[];
 }
 
 export interface IAssignee {
