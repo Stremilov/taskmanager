@@ -1,0 +1,44 @@
+version: '3.8'
+services:
+  spring-app:
+    build:
+      context: ./backend
+    ports:
+      - "8080:8080"
+    env_file:
+      - backend/.env
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/project
+      SPRING_DATASOURCE_USERNAME: ${DATABASE_USER}
+      SPRING_DATASOURCE_PASSWORD: ${DATABASE_PASSWORD}
+    depends_on:
+      - db
+    container_name: spring_boot_app
+    command: ["sh", "-c", "env && java -jar it-one-task-tracker-backend-0.0.1-SNAPSHOT.jar"]
+
+  db:
+    image: postgres:15
+    restart: always
+    env_file:
+      - backend/.env
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    container_name: postgres_db
+    ports:
+      - "5432:5432"
+
+  react-app:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    container_name: react_app
+    depends_on:
+      - spring-app
+
+volumes:
+  postgres-data:
