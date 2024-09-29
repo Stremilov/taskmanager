@@ -5,7 +5,6 @@ import { selectTeams } from "@/redux/slices/teams/selectors";
 
 const TeamsList = () => {
   const availableTeams = useAppSelector(selectTeams);
-  console.log("availableTeams", availableTeams);
 
   return (
     <ul className={cls.main}>
