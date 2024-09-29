@@ -13,20 +13,11 @@ export interface ITask {
 
 export interface IAssignee {
   id: string;
-  name: string;
-  password: string;
-  surname: string;
-  username: string;
-  email: string;
-  phone: string;
-  teams: [
-    {
-      id: string;
-      name: string;
-      users: string[];
-      projects: string[];
-    }
-  ];
+  name?: string;
+  password?: string;
+  surname?: string;
+  username?: string;
+  email?: string;
 }
 
 export interface IProject {

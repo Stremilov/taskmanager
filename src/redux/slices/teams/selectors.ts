@@ -1,16 +1,17 @@
 import { RootState } from "@/redux/store";
-import { IProject, ITeam } from "@/redux/types/types";
+import { IProject, ITask, ITeam } from "@/redux/types/types";
 import { createSelector } from "@reduxjs/toolkit";
 
-const emptyTask = {
+const emptyTask: ITask = {
   id: "-1Task",
   name: "Задача без имени",
   description: "Задача без описания",
   projectId: "-1p",
   completionStatus: "NOT_ACTIVE", // ! "NOT_ACTIVE" | "ACTIVE" | "CHECKING" | "COMPLETED";
+  assignees: [{ id: "#qq13", name: "Артём" }],
 };
 
-const emptyProject = {
+const emptyProject: IProject = {
   id: "-1p",
   name: "Проект без имени",
   description: "Проект без описания",
@@ -21,7 +22,7 @@ const emptyProject = {
   tasks: [emptyTask],
 };
 
-const emptyTeam = {
+const emptyTeam: ITeam = {
   id: "-1t",
   name: "Команда без имени",
   projects: [emptyProject],

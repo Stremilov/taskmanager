@@ -39,7 +39,7 @@ const Task: FC<ITask> = ({
   name,
   description,
   difficulty = 1,
-  authorId,
+  assignees = [{ id: "#1e2ss3", name: "Olezhka1337" }],
 }) => {
   const date = new Date().toLocaleDateString("ru-RU");
 
@@ -69,7 +69,9 @@ const Task: FC<ITask> = ({
       <div className={cls.bottom}>
         <div className={cls.author}>
           <Avatar size={24} />
-          <span>{"Имя пользователя"}</span>
+          <span>
+            {assignees[0].id}: {assignees[0].name}
+          </span>
         </div>
         <a href={taskLink} className={cls.link} target="_blank">
           <GithubLogo fill="var(--default-500)" />

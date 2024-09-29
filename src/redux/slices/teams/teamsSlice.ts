@@ -141,9 +141,9 @@ export const teamsSlice = createSlice({
       state.chosenProjectId = action.payload;
     },
 
-    renameProject(state, action: PayloadAction<{ id: string; name: string }>) {
-      console.log("AA");
-    },
+    // renameProject(state, action: PayloadAction<{ id: string; name: string }>) {
+    //   console.log("AA");
+    // },
     // removeTeam(state, action: PayloadAction<string>) {
     //   // пупупу
     //   const taskRemoved = fetch(
@@ -153,7 +153,6 @@ export const teamsSlice = createSlice({
   },
 });
 
-export const { addTeam, chooseTeam, chooseProject, renameProject } =
-  teamsSlice.actions;
+export const { addTeam, chooseTeam, chooseProject } = teamsSlice.actions;
 
 export default teamsSlice.reducer;
