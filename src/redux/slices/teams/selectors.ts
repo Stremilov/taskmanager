@@ -7,6 +7,7 @@ const emptyTask = {
   name: "Задача без имени",
   description: "Задача без описания",
   projectId: "-1p",
+  completionStatus: "NOT_ACTIVE", // ! "NOT_ACTIVE" | "ACTIVE" | "CHECKING" | "COMPLETED";
 };
 
 const emptyProject = {
@@ -79,3 +80,8 @@ export const selectChosenProjectsTasks = (state: RootState) => {
   const project = selectChosenProject(state);
   return project.tasks;
 };
+
+export const selectChosenProjectsTasksByType = (status: string) =>
+  createSelector(selectChosenProjectsTasks, (tasks) => {
+    return tasks.filter((task) => task.completionStatus === status);
+  });

@@ -4,10 +4,10 @@ import cls from "./mainBoard.module.scss";
 import TasksList, { TasksListsTypes } from "./TasksList";
 
 const tasksListsTypes: TasksListsTypes[] = [
-  "notDone",
-  "inProgress",
-  "checking",
-  "done",
+  "NOT_ACTIVE",
+  "ACTIVE",
+  "CHECKING",
+  "COMPLETED",
 ];
 
 const MainBoard = () => {

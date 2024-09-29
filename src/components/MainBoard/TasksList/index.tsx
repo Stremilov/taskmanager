@@ -1,22 +1,26 @@
 import { FC, Fragment } from "react";
 import { useAppSelector } from "@/redux/utils/hooks";
-import { selectChosenProjectsTasks } from "@/redux/slices/teams/selectors";
+import { selectChosenProjectsTasksByType } from "@/redux/slices/teams/selectors";
 import Heading from "./Heading";
 import cls from "./tasksList.module.scss";
 import AddNewTaskBtn from "./AddNewTaskBtn";
 import Task from "./Task";
 
-export type TasksListsTypes = "notDone" | "inProgress" | "checking" | "done";
+export type TasksListsTypes =
+  | "NOT_ACTIVE"
+  | "ACTIVE"
+  | "CHECKING"
+  | "COMPLETED";
 
 const listsNames = {
-  notDone: "Не начато",
-  inProgress: "В работе",
-  checking: "На проверке",
-  done: "Завершено",
+  NOT_ACTIVE: "Не начато",
+  ACTIVE: "В работе",
+  CHECKING: "На проверке",
+  COMPLETED: "Завершено",
 };
 
 const TasksList: FC<{ type: TasksListsTypes }> = ({ type }) => {
-  const tasks = useAppSelector(selectChosenProjectsTasks);
+  const tasks = useAppSelector(selectChosenProjectsTasksByType(type));
 
   return (
     <div className={cls.main}>

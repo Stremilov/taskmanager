@@ -2,7 +2,14 @@ export interface ITask {
   projectId: string;
   id: string;
   name: string;
+  completionStatus: "NOT_ACTIVE" | "ACTIVE" | "CHECKING" | "COMPLETED"; // ! "NOT_ACTIVE" | "ACTIVE" | "CHECKING" | "COMPLETED";
   description?: string;
+  deadline?: string;
+  difficulty?: string;
+  branchInfo?: string;
+  createdDate?: string; // "2024-09-27";
+  author?: IAuthor;
+  assignee?: IAssignee;
 }
 
 export interface IAuthor {
@@ -57,11 +64,4 @@ export interface ITeam {
   id: string;
   name: string;
   projects: IProject[];
-  deadline?: string;
-  difficulty?: string;
-  branchInfo?: string;
-  createdDate?: string; // "2024-09-27";
-  completionStatus?: string; // ! "NOT_ACTIVE" | "ACTIVE" | "CHECKING" | "COMPLETED";
-  author?: IAuthor;
-  assignee?: IAssignee;
 }
