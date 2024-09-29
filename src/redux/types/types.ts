@@ -5,7 +5,7 @@ export interface ITask {
   completionStatus: "NOT_ACTIVE" | "ACTIVE" | "CHECKING" | "COMPLETED"; // ! "NOT_ACTIVE" | "ACTIVE" | "CHECKING" | "COMPLETED";
   description?: string;
   deadline?: string;
-  difficulty?: string;
+  difficulty?: number;
   branchInfo?: string;
   createdDate?: string; // "2024-09-27";
   author?: IAuthor;

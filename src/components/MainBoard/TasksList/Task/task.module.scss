@@ -11,6 +11,23 @@
   background-color: var(--default-50);
 }
 
+.heading {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+
+.difficulty {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dots {
+  display: inline-flex;
+  gap: 2px;
+}
+
 .info {
   display: flex;
   flex-wrap: nowrap;
@@ -26,10 +43,15 @@
   color: var(--default-700);
 }
 
-.heading {
-  font-weight: 700;
+.title {
+  font-weight: 500;
   font-size: 20px;
   color: var(--default-900);
+}
+
+.description {
+  font-size: 14px;
+  color: var(--custom-grey);
 }
 
 .taskId {

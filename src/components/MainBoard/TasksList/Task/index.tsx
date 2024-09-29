@@ -7,8 +7,36 @@ import ClockIcon from "@assets/pics/clock.svg";
 import cls from "./task.module.scss";
 import { ITask } from "@/redux/types/types";
 import GithubLogo from "@/assets/pics/GithubLogo";
+import DifficultyEclipse from "@/assets/pics/difficultyEclipse.svg";
 
-const Task: FC<ITask> = ({ id, name, description, authorId }) => {
+const difficulties = [null, "Easy", "Middle", "Hard"];
+
+const Difficulty: FC<{ taskDifficulty: number }> = ({ taskDifficulty }) => {
+  // 1-2-3
+  return (
+    <div className={cls.difficulty}>
+      <p className={cls.dots}>
+        {new Array(taskDifficulty).fill(
+          <img
+            width={6}
+            height={6}
+            src={DifficultyEclipse}
+            alt="difficulty eclipse for scaling"
+          />
+        )}
+      </p>
+      {difficulties[taskDifficulty]}
+    </div>
+  );
+};
+
+const Task: FC<ITask> = ({
+  id,
+  name,
+  description,
+  difficulty = 1,
+  authorId,
+}) => {
   const date = new Date().toLocaleDateString("ru-RU");
 
   const taskLink = `http://github.com/${"someUri"}/task/${id}`;
@@ -29,7 +57,10 @@ const Task: FC<ITask> = ({ id, name, description, authorId }) => {
           {date}
         </span>
       </div>
-      <h1 className={cls.heading}>{name}</h1>
+      <p className={cls.heading}>
+        <h1 className={cls.title}>{name}</h1>
+        <Difficulty taskDifficulty={difficulty} />
+      </p>
       <p className={cls.description}>{description}</p>
       <div className={cls.bottom}>
         <div className={cls.author}>
