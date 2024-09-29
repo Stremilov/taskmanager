@@ -13,18 +13,22 @@ const difficulties = [null, "Easy", "Middle", "Hard"];
 
 const Difficulty: FC<{ taskDifficulty: number }> = ({ taskDifficulty }) => {
   // 1-2-3
+  const dots = [];
+  for (let i = 0; i < taskDifficulty; i++) {
+    dots[i] = (
+      <img
+        key={i}
+        width={6}
+        height={6}
+        src={DifficultyEclipse}
+        alt="difficulty eclipse for scaling"
+      />
+    );
+  }
+
   return (
     <div className={cls.difficulty}>
-      <p className={cls.dots}>
-        {new Array(taskDifficulty).fill(
-          <img
-            width={6}
-            height={6}
-            src={DifficultyEclipse}
-            alt="difficulty eclipse for scaling"
-          />
-        )}
-      </p>
+      <p className={cls.dots}>{dots.map((dot) => dot)}</p>
       {difficulties[taskDifficulty]}
     </div>
   );

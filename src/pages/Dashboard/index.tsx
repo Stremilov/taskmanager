@@ -9,6 +9,15 @@ import { useNavigate } from "react-router-dom";
 const DashBoard = () => {
   const { user } = useContext(SessionContext);
   const navigate = useNavigate();
+
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const codeParam = urlParams.get("code");
+
+  if (codeParam && localStorage.getItem("accessToken") === null) {
+    console.log("Токина нету :(");
+  }
+
   console.log(user);
   if (user) {
     return (
